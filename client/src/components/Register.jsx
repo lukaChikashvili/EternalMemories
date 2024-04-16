@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Register = () => {
@@ -8,6 +8,8 @@ const Register = () => {
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+ 
+  let navigate = useNavigate();
 
   // SUCCESS TEXT
   const [success, setSuccess] = useState(false);
@@ -20,6 +22,9 @@ const Register = () => {
 
      if(response.status === 200) {
        setSuccess(true);
+       setTimeout(() => {
+         navigate('/');
+       }, 3000);
      }
 
    }
@@ -32,7 +37,7 @@ const Register = () => {
 ) : (
 <form className='flex flex-col gap-6 w-1/2 justify-center items-center' onSubmit={handleRegister} >
    <input type='text' placeholder='სახელი' className='w-1/2 p-2 border-4  border-[#525CEB] rounded-md outline-none' onChange={(e) => setName(e.target.value)} />
-   <input type='password' placeholder='გვარი' className='w-1/2 p-2 border-4  border-[#525CEB] rounded-md outline-none'  onChange={(e) => setSurname(e.target.value)} />
+   <input type='text' placeholder='გვარი' className='w-1/2 p-2 border-4  border-[#525CEB] rounded-md outline-none'  onChange={(e) => setSurname(e.target.value)} />
    <input type='text' placeholder='ელ-ფოსტა' className='w-1/2 p-2 border-4  border-[#525CEB] rounded-md outline-none'  onChange={(e) => setEmail(e.target.value)}/>
    <input type='password' placeholder='პაროლი' className='w-1/2 p-2 border-4  border-[#525CEB] rounded-md outline-none'  onChange={(e) => setPassword(e.target.value)} />
    <button type='submit' className='bg-[#525CEB] w-1/2 p-2 rounded-md hover:opacity-70 text-white'>შესვლა</button>
