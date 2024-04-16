@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("//cdn.web-fonts.ge/fonts/bpg-algeti-compact/css/bpg-algeti-compact.min.css");
+
+body, html {
+    font-family: "BPG Algeti Compact", sans-serif;
+}
+
+.line {
+    position: relative;
+}
+
+.line::after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+    bottom: -10px;
+    transition: all 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
