@@ -1,22 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { School } from 'lucide-react';
 
 const SideBar = () => {
-    const [showUpload, setShowUpload] = useState(false);
-   
   return (
-    <div className='w-1/5 h-screen bg-[#F4CE14]'>
-    <div className='flex gap-4  text-xl cursor-pointer justify-end pr-8 p-12 '>
-       <p onClick={() => setShowUpload(true)} style={{fontWeight: showUpload && 'bold'}}>ატვირთვა</p>
-       <p onClick={() => setShowUpload(false)} style={{fontWeight: showUpload === false ?  'bold' : ''}}>წიგნები</p>
-       </div>
-
-       {showUpload ? <div>
-           <h2 className='text-2xl text-center'>ატვირთე წიგნი</h2>
-
-           
-        </div> : <div>
-            books
-            </div> }
+    <div className='w-1/5 min-h-screen bg-[#D8D9DA] flex flex-col items-center gap-8 pt-12'>
+        <div className='flex items-center gap-4 w-full text-center shadow-lg justify-center p-4'>
+            <School />
+        <Link className='text-xl font-semibold ' to = "/profile/schools">სკოლები</Link>
+        </div>
+     
+        <Link className='text-xl font-semibold w-full text-center shadow-lg'>სკოლები</Link>
+        <Link className='text-xl font-semibold w-full text-center shadow-lg'>სკოლები</Link>
+        <Link className='text-xl font-semibold w-full text-center shadow-lg'>სკოლები</Link>
     </div>
   )
 }
