@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Register from './components/Register';
 import Schools from './components/Schools';
+import SchoolDetail from './components/SchoolDetail';
+import Main from './components/Main';
 
 function App() {
   const auth = !!localStorage.getItem('token');
@@ -11,10 +13,12 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path = "/" element = {<Login />} />
+      <Route path = "/" element = {<Main />} />
+        <Route path = "/login" element = {<Login />} />
         <Route path = "/register" element = {<Register />} />
          <Route path = "/profile" element = {<Home /> }>
              <Route path = "schools" element = {<Schools />} />
+             <Route path="schools/:id" element={<SchoolDetail />} />
           </Route>  
 
       </Routes>

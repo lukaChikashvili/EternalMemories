@@ -12,12 +12,12 @@ const Header = () => {
   }
 
   return (
-    <div className='w-full flex items-center justify-between bg-[#864AF9] p-8'>
+    <div className='w-full flex items-center justify-between p-8'>
        <div className="logo">
-          <h1 className='text-sm md:text-3xl text-white cursor-pointer'>Schooly</h1>
+          <h1 className='text-sm md:text-3xl  cursor-pointer text-white' onClick={() => navigate('/')}>LingoBingo</h1>
        </div>
 
-       <nav className='text-white flex gap-8 text-xl line'>
+       <nav className=' flex text-white gap-8 text-xl line'>
         {auth ? (
           <>
           <Link to = "/" className='line'>ჩემი პროფილი</Link>
@@ -25,8 +25,8 @@ const Header = () => {
           </>
         ) : (
           <>
-          <Link to = "/" className='line'>მთავარი</Link>
-          <Link to = "/" className='line'>შესახებ</Link>
+            
+          <Link to = "/login" className='line enter w-24 text-center py-1 rounded-md' >შესვლა</Link>
           </>
         )}
        

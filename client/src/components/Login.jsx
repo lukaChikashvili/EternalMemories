@@ -24,13 +24,13 @@ const Login = () => {
   }
 
   return (
-    <div className='flex flex-col items-center p-12 gap-12 '>
-       <h1 className='text-3xl font-semibold text-center'>სისტემაში შესვლა</h1>
+    <div className='flex flex-col items-center p-12 gap-12 login w-1/2 m-auto mt-16'>
+       <h1 className='text-3xl text-black text-center font-bold'>სისტემაში შესვლა</h1>
 
-       <form className='flex flex-col gap-6 w-1/2 justify-center items-center' onSubmit={handleLogin} >
+       <form className='flex flex-col gap-6 w-full justify-center items-center' onSubmit={handleLogin} >
           <input type='text' placeholder='ელ-ფოსტა' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none' onChange={(e) => setEmail(e.target.value)} />
           <input type='password' placeholder='პაროლი' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none' onChange={(e) => setPassword(e.target.value)} />
-          <button type='submit' className='bg-[#864AF9] w-1/2 p-2 rounded-md hover:opacity-70 text-white'>შესვლა</button>
+          <button type='submit' className='enter w-1/2 p-2 rounded-md hover:opacity-70 text-white'>შესვლა</button>
           <span className='text-xl cursor-pointer'>არ გაქვს ანგარიში? <i><Link to = "/register">რეგისტრაცია</Link></i></span>
        </form>
     </div>

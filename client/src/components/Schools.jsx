@@ -1,4 +1,6 @@
+import { ExternalLink } from 'lucide-react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Schools = () => {
@@ -52,8 +54,11 @@ const Schools = () => {
           
    <div className='flex flex-col items-center gap-4 p-12' key={value.id}>
    <h2 className='text-2xl'>{value.name}</h2>
-   <img className='w-64 shadow-lg duration-500 ease-in hover:opacity-50 cursor-pointer h-64 object-cover' src = {value.img} />
-
+   <img className='w-64 shadow-lg duration-500 ease-in hover:opacity-50 cursor-pointer h-64 object-cover'    src = {value.img} />
+     <Link className='flex gap-4 text-[#864AF9] font-semibold' to = {`/profile/schools/${value.id}`}>
+     იხილეთ სრულად
+     <ExternalLink />
+     </Link>
 </div>
 
         ))}
