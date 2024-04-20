@@ -21,12 +21,12 @@ const Header = () => {
         {auth ? (
           <>
           <Link to = "/" className='line'>ჩემი პროფილი</Link>
-          <button onClick={logout}>გამოსვლა</button>
+          <button onClick={logout}>Log out</button>
           </>
         ) : (
           <>
             
-          <Link to = "/login" className='line enter w-24 text-center py-1 rounded-md' >შესვლა</Link>
+          <Link to = "/login" className='line enter w-24 text-center py-1 rounded-md' >Log In</Link>
           </>
         )}
        
