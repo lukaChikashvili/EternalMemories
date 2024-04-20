@@ -2,6 +2,8 @@ import { Mouse } from 'lucide-react'
 import React from 'react'
 import About from './About'
 import Langs from './Langs'
+import Mentors from './Mentors'
+import Footer from './Footer'
 
 const Main = () => {
   return (
@@ -27,6 +29,8 @@ const Main = () => {
   
        <About />
        <Langs />
+       <Mentors />
+       <Footer />
        </>
   )
 }

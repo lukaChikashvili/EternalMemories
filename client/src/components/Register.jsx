@@ -30,18 +30,18 @@ const Register = () => {
    }
 
   return (
-    <div className='flex flex-col items-center p-12 gap-12'>
-        <h1 className='text-3xl font-semibold text-center'>რეგისტრაცია</h1>
+    <div className='flex flex-col items-center p-12 gap-12 login w-1/2 m-auto'>
+        <h1 className='text-3xl font-semibold text-center'>Register</h1>
 {success ? (
   <p className='text-xl text-green-600'>თქვენ წარმატებით დარეგისტრირდით</p>
 ) : (
-<form className='flex flex-col gap-6 w-1/2 justify-center items-center' onSubmit={handleRegister} >
-   <input type='text' placeholder='სახელი' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none' onChange={(e) => setName(e.target.value)} />
-   <input type='text' placeholder='გვარი' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none'  onChange={(e) => setSurname(e.target.value)} />
-   <input type='text' placeholder='ელ-ფოსტა' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none'  onChange={(e) => setEmail(e.target.value)}/>
-   <input type='password' placeholder='პაროლი' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none'  onChange={(e) => setPassword(e.target.value)} />
-   <button type='submit' className='bg-[#864AF9] w-1/2 p-2 rounded-md hover:opacity-70 text-white'>შესვლა</button>
-   <span className='text-xl cursor-pointer'>უკვე გაქვს ანგარიში? <i><Link to  ="/">შესვლა</Link></i></span>
+<form className='flex flex-col gap-6 w-full justify-center items-center' onSubmit={handleRegister} >
+   <input type='text' placeholder='Name' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none' onChange={(e) => setName(e.target.value)} />
+   <input type='text' placeholder='Surname' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none'  onChange={(e) => setSurname(e.target.value)} />
+   <input type='text' placeholder='Email' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none'  onChange={(e) => setEmail(e.target.value)}/>
+   <input type='password' placeholder='Password' className='w-1/2 p-2 border-4  border-[#864AF9] rounded-md outline-none'  onChange={(e) => setPassword(e.target.value)} />
+   <button type='submit' className='bg-[#864AF9] w-1/2 p-2 rounded-md hover:opacity-70 text-white'>Register</button>
+   <span className='text-xl cursor-pointer'>უკვე გაქვს ანგარიში? <i><Link to  ="/login">Login</Link></i></span>
 </form>
 )}
 
