@@ -1,6 +1,7 @@
 import { Mouse } from 'lucide-react'
 import React from 'react'
 import About from './About'
+import Langs from './Langs'
 
 const Main = () => {
   return (
@@ -25,6 +26,7 @@ const Main = () => {
     </div>
   
        <About />
+       <Langs />
        </>
   )
 }
