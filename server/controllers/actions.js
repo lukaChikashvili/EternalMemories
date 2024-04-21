@@ -46,7 +46,7 @@ const loginUsers = async (req, res) => {
 }
 
 // CREATE EVENTS
-const createEvent = async () => {
+const createEvent = async (req, res) => {
     const { title, img, lang, location, time  } = req.body;
 
     try {
@@ -68,9 +68,16 @@ const createEvent = async () => {
     }
 }
 
+// GET ALL EVENTS
+const getAllEvents = async (req, res) => {
+    const events = await Event.find().populate('author');
+
+    return res.json({events});
+}
 
 module.exports = {
    registerUsers,
    loginUsers,
-   createEvent
+   createEvent,
+   getAllEvents
 }
