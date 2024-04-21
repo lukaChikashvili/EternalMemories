@@ -20,7 +20,7 @@ const Header = () => {
        <nav className=' flex text-white gap-8 text-xl line'>
         {auth ? (
           <>
-          <Link to = "/" className='line'>ჩემი პროფილი</Link>
+          <Link to = "/profile" className='line'>My profile</Link>
           <button onClick={logout}>Log out</button>
           </>
         ) : (

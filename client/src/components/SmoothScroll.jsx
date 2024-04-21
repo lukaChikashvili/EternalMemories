@@ -3,6 +3,7 @@ import { ReactLenis } from '@studio-freight/react-lenis'
 import gsap from 'gsap';
 
 
+
 const SmoothScroll = ({children}) => {
 
     const lenisRef = useRef()
