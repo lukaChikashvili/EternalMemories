@@ -6,11 +6,15 @@ import Register from './components/Register';
 import Schools from './components/Schools';
 import SchoolDetail from './components/SchoolDetail';
 import Main from './components/Main';
+import SmoothScroll from './components/SmoothScroll';
+
 
 function App() {
   const auth = !!localStorage.getItem('token');
   return (
     <div className="App">
+      <SmoothScroll>
+    
       <Header />
       <Routes>
       <Route path = "/" element = {<Main />} />
@@ -22,6 +26,7 @@ function App() {
           </Route>  
 
       </Routes>
+      </SmoothScroll>
     </div>
   );
 }
