@@ -1,6 +1,8 @@
 const { User } = require('../models/UserModels');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { Event } = require('../models/EventModel');
+
 
 // REGISRTER USERS
 const registerUsers = async (req, res) => {
@@ -43,7 +45,32 @@ const loginUsers = async (req, res) => {
    
 }
 
+// CREATE EVENTS
+const createEvent = async () => {
+    const { title, img, lang, location, time  } = req.body;
+
+    try {
+      if(!req.user) {
+          return res.status(404).json({message: "invalid user"});
+
+      }
+
+      const userId = req.user.id;
+
+       const newEvent = new Event({title, img, lang, location, time, author: userId});
+
+       await newEvent.save();
+
+       return res.json({messsage: 'event created'});
+
+    } catch (error) {
+       console.log(error);
+    }
+}
+
+
 module.exports = {
    registerUsers,
-   loginUsers
+   loginUsers,
+   createEvent
 }
