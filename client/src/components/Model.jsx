@@ -1,5 +1,5 @@
 import React from 'react'
-import { Float,  SpotLight,  SpotLightShadow,  useGLTF} from '@react-three/drei'
+import { Float,  SpotLight,   useGLTF} from '@react-three/drei'
 
 const Model = () => {
   
@@ -16,7 +16,7 @@ const Model = () => {
   return (
     <>
   
-    
+
     <Float speed={0.5}>
         <SpotLight  distance={10}
                     angle={0.15}
@@ -45,6 +45,7 @@ const Model = () => {
                     anglePower={2} scale={10} position={[-7, 12, 5]} color={'green'} >
 
                     </SpotLight>
+                
     </>
 
   )
