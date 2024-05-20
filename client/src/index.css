@@ -6,11 +6,19 @@
 
 body, html {
    
-    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);                                        
+                                            
     font-family: 'Marhey', sans-serif;
    min-height: 100vh;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+
 }
 
+.back {
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+}
+     
 
 .line {
     position: relative;
@@ -30,4 +38,20 @@ body, html {
 
 .line:hover::after {
     width: 100%;
+}
+
+.fullLine {
+    position: relative;
+}
+
+.fullLine::after {
+    position: absolute;
+    content: "";
+    height: 1.5px;
+    width: 100%;
+    background-color: #fff;
+    left: 0;
+    bottom: -3px;
+    
+
 }

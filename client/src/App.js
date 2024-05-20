@@ -16,7 +16,7 @@ function App() {
   const auth = !!localStorage.getItem('token');
   return (
     <div className="App">
-      <div className='absolute  h-screen w-full '>
+      <div className='fixed  h-screen w-full back '>
       <Canvas camera={{ position: [0, 10, 15], fov: 50 }}  >
         <Model />
         <Lights />
