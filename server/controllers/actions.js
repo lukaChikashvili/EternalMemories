@@ -61,7 +61,7 @@ const createEvent = async (req, res) => {
 
        await newEvent.save();
 
-       return res.json({messsage: 'event created'});
+       return res.json({events: newEvent});
 
     } catch (error) {
        console.log(error);
