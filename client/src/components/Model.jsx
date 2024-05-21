@@ -1,9 +1,16 @@
-import React from 'react'
-import { Float,  SpotLight,   useGLTF} from '@react-three/drei'
+import React, { useRef } from 'react'
+import { Float,  ScrollControls,  SpotLight,   useGLTF, useScroll} from '@react-three/drei'
+import { useFrame } from '@react-three/fiber';
+
 
 const Model = () => {
   
+
+let modelRef = useRef(null);
     const model = useGLTF('./coffin.glb');
+
+
+  
 
     model.scene.traverse((child) => {
         if (child.isMesh) {
@@ -12,6 +19,7 @@ const Model = () => {
           
         }
       });
+    
     
   return (
     <>
@@ -28,6 +36,7 @@ const Model = () => {
                  scale = {0.9} 
                position = {[6, -0.5, 3]}  
                 rotation = {[-0.1, -4, 0]}
+               ref = {modelRef}
                  
                     />
      </SpotLight>
@@ -45,9 +54,9 @@ const Model = () => {
                     anglePower={2} scale={10} position={[-7, 12, 5]} color={'green'} >
 
                     </SpotLight>
-                
+                        
     </>
-
+  
   )
 }
 

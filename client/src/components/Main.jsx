@@ -1,7 +1,8 @@
 
 import React from 'react'
 import About from './About'
-
+import { motion } from 'framer-motion';
+import Prices from './Prices';
 
 
 
@@ -10,16 +11,33 @@ const Main = () => {
     <>
   
         <div className='w-1/2  pt-56 px-28 absolute' style={{minHeight: '300vh'}}>
-          <h1 className='text-6xl text-white  ' style={{lineHeight: "5rem"}}><span className='text-pink-500 '>Cherishing </span> Memories Forever.</h1>
-          <p className='text-white text-2xl pt-8' style={{lineHeight: "2.5rem"}}>
+          <motion.h1 initial = {{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'}}
+                     whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+                     transition={{ duration: 1.5, delay: 0.5 }}
+                      className='text-6xl text-white  ' style={{lineHeight: "5rem"}}><span className='text-pink-500 '>Cherishing </span> Memories Forever.</motion.h1>
+
+          <motion.p initial = {{ opacity: 0}}
+                     whileInView={{ opacity: 1}}
+                     transition={{ duration: 1.5, delay: 1.5 }}
+          className='text-white text-2xl pt-8' style={{lineHeight: "2.5rem"}}>
 Craft a heartfelt and elegant memorial page to celebrate the life and legacy of your loved one. 
-</p>
+</motion.p>
+
  <div className='flex gap-4 pt-8' >
-   <button className='text-white bg-pink-500 py-2 px-8 rounded-md shadow-lg text-xl duration-500 ease-in hover:opacity-80'>Create memorial page</button>
-   <button className='text-white border-2 border-pink-500 py-2 px-8 rounded-md shadow-lg text-xl duration-500 ease-in hover:bg-pink-500'>Example memorial</button>
+   <motion.button initial = {{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'}}
+                     whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+                     transition={{ duration: 0.5, delay: 2 }}
+
+   className='text-white bg-pink-500 py-2 px-8 rounded-md shadow-lg text-xl duration-500 ease-in hover:opacity-80'>Create memorial page</motion.button>
+
+   <motion.button initial = {{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'}}
+                     whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+                     transition={{ duration: 0.5, delay: 2 }}
+   className='text-white border-2 border-pink-500 py-2 px-8 rounded-md shadow-lg text-xl duration-500 ease-in hover:bg-pink-500'>Example memorial</motion.button>
  </div>
 
  <About />
+ <Prices />
         </div>
 
 

@@ -1,15 +1,28 @@
 import React from 'react'
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+
+  let navigate = useNavigate();
   return (
-    <div className='absolute w-full flex items-center justify-between text-white py-8 px-24'>
+    <div className='absolute w-full flex items-center justify-between text-white py-8 px-24 '>
        <div className="logo">
-           <h1 className='text-3xl cursor-pointer'>EternalMemories</h1>
+           <motion.h1 initial = {{opacity: 0, translateX: -10}}
+           whileInView={{opacity: 1, translateX: 0}}
+           transition={{duration: 1.5, delay: 1.5}}
+           className='text-3xl cursor-pointer' onClick={() => navigate('/')}>EternalMemories</motion.h1>
        </div>
 
        <nav className='flex gap-8 items-center '>
-          <h2 className='text-xl cursor-pointer line'>Log in</h2>
-          <h2 className='text-xl border-2 border-white rounded-md py-1 px-6 cursor-pointer duration-500 ease-in hover:bg-white hover:text-black'>Get started</h2>
+          <motion.h2 initial = {{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'}}
+                     whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+                     transition={{ duration: 1, delay: 1.5 }}
+          className='text-xl cursor-pointer line' onClick={() => navigate('/login')}>Log in</motion.h2>
+          <motion.h2 initial = {{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'}}
+                     whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+                     transition={{ duration: 1, delay: 1.8 }}
+          className='text-xl border-2 border-white rounded-md py-1 px-6 cursor-pointer duration-500 ease-in hover:bg-white hover:text-black'>Get started</motion.h2>
        </nav>
     </div>
   )
