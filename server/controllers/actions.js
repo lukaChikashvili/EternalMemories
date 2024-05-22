@@ -47,7 +47,7 @@ const loginUsers = async (req, res) => {
 
 // CREATE EVENTS
 const createEvent = async (req, res) => {
-    const { title, img, lang, location, time  } = req.body;
+    const { name, surname, birth, death, location  } = req.body;
 
     try {
       if(!req.user) {
@@ -57,7 +57,7 @@ const createEvent = async (req, res) => {
 
       const userId = req.user.id;
 
-       const newEvent = new Event({title, img, lang, location, time, author: userId});
+       const newEvent = new Event({name, surname, birth, death, location, author: userId});
 
        await newEvent.save();
 
