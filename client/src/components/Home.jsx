@@ -22,6 +22,9 @@ const Home = () => {
     getEvents();
    }, [])
 
+   const fullPage = (id) => {
+     navigate(`/events/${id}`);
+   }
   return (
     <div className=' w-full flex absolute pt-28 '>
 
@@ -38,7 +41,7 @@ const Home = () => {
 {events.map((value) => (
   <div key={value._id} className='flex flex-col items-center gap-4'>
         <img src = {value.img} className='w-56 h-56 object-cover rounded-full shadow-lg cursor-pointer' />
-        <h2 className='text-2xl underline cursor-pointer decoration-pink-500 underline-offset-8 duration-500 ease-in hover:decoration-wavy'>{value.name}  {value.surname}</h2>
+        <h2 className='text-2xl underline cursor-pointer decoration-pink-500 underline-offset-8 duration-500 ease-in hover:decoration-wavy' onClick={() => fullPage(value._id)}>{value.name}  {value.surname}</h2>
         <p>{value.birth} - {value.death}</p>
     </div>
 ))}
