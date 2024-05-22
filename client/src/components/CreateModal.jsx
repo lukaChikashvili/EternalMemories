@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import axios from 'axios';
 import { EventContext } from '../context/EventContext';
 import { useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 const CreateModal = () => {
 
@@ -39,6 +40,7 @@ const CreateModal = () => {
 
   return (
     <div className='absolute flex flex-col items-center justify-center min-h-screen w-full m-auto gap-8 text-white pt-36 ' >
+      <ArrowLeft className='absolute top-36 cursor-pointer duration-500 ease-in hover:opacity-50 left-96 ' onClick={() => navigate('/profile')}   size={40} />
       <h1 className='text-2xl text-pink-500 font-bold'>Create memorial page easily. Enter details</h1>
         <div className='flex flex-col items-start gap-4  '>
         <label className='text-xl font-bold'>First name </label> 
