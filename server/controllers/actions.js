@@ -75,9 +75,19 @@ const getAllEvents = async (req, res) => {
     return res.json({events});
 }
 
+// GET ONE EVENT
+const getOneEvent = async (req, res) => {
+  const { id } = req.params;
+
+   const oneEvent = await Event.findById(id).populate('author');
+
+   return res.json({oneEvent});
+}
+
 module.exports = {
    registerUsers,
    loginUsers,
    createEvent,
-   getAllEvents
+   getAllEvents,
+   getOneEvent
 }
