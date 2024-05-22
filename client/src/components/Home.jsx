@@ -2,13 +2,15 @@ import React, { useContext, useEffect } from 'react'
 import CreateModal from './CreateModal';
 import axios from 'axios';
 import { EventContext } from '../context/EventContext';
+import { useNavigate } from 'react-router-dom';
  
 
 
 const Home = () => {
   
-  const { events, setEvents, setShowModal, showModal} = useContext(EventContext);
+  const { events, setEvents} = useContext(EventContext);
 
+  let navigate = useNavigate();
 
    const getEvents = async () => {
      const response = await axios.get('http://localhost:5000/api/events/all');
@@ -21,27 +23,24 @@ const Home = () => {
    }, [])
 
   return (
-    <div className=' w-full flex relative'>
+    <div className=' w-full flex absolute pt-28 '>
 
        
 
 
           <button className='absolute right-12
            bg-white w-36 rounded-md shadow-lg p-2 
-           duration-500 ease-in hover:bg-black hover:text-white' onClick={() => setShowModal(true)}>Create Event</button>
+           duration-500 ease-in hover:bg-pink-500 hover:text-white' onClick={() => navigate('/create')}>Create Event</button>
     
-    {showModal && <CreateModal />}
+  
 
 <div className='grid grid-cols-3 gap-12'>
 {events.map((value) => (
-  <div key={value._id} className='flex flex-col gap-4 p-8 text-white'>
-    <h2 className='text-2xl text-white cursor-pointer'>{value.title}</h2>
-    <img src = {value.img} className='w-96 h-64 object-cover cursor-pointer rounded-md shadow-lg duration-500 ease hover:opacity-80' />
-   <div className='flex items-center justify-between px-6'>
-    <p>{value.location}</p>
-    <p>{value.time}</p>
-    </div>
-    <p className='bg-black w-1/2 text-center p-2 cursor-pointer rounded-md shadow-lg duration-500 ease hover:bg-white hover:text-black'>{value.lang}</p>
+  <div key={value._id}>
+        <img src = {value.img} />
+        <h2>{value.name}</h2>
+        <h2>{value.surname}</h2>
+        <p>{value.birth} - {value.death}</p>
     </div>
 ))}
 

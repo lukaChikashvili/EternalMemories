@@ -10,6 +10,7 @@ import {Canvas} from '@react-three/fiber';
 import Model from './components/Model';
 import Lights from './components/Lights';
 import Header from './components/Header';
+import CreateModal from './components/CreateModal';
 
 
 function App() {
@@ -29,9 +30,8 @@ function App() {
       <Route path = "/" element = {<Main />} />
         <Route path = "/login" element = {<Login />} />
         <Route path = "/register" element = {<Register />} />
-         <Route path = "/profile" element = {<Home /> }>
-          
-          </Route>  
+         <Route path = "/profile" element = {<Home /> }></Route>  
+          <Route path = "/create" element = {<CreateModal /> } />
 
       </Routes>
       </SmoothScroll>
