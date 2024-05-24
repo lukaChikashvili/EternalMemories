@@ -111,11 +111,33 @@ const createComment = async (req, res) => {
       console.log(error);
    }
 }
+
+
+// GET ALL COMMENTS
+ const getAllComments = async (req, res) => {
+    const { id } = req.params;
+
+    const getComment = await Comment.find({event: id}).populate('author');
+
+    const commentsWithUserNames = getComment.map(comment => ({
+      _id: comment._id,
+      text: comment.text,
+      createdAt: comment.createdAt,
+      user: comment.author?.name 
+  }));
+
+  return res.status(200).json({ getComment: commentsWithUserNames });
+ }
+
+
+
 module.exports = {
    registerUsers,
    loginUsers,
    createEvent,
    getAllEvents,
    getOneEvent,
-   createComment
+   createComment,
+   getAllComments
+   
 }
