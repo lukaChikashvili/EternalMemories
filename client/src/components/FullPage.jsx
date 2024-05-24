@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { BookOpen, Calendar, MapPin } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Outlet, useNavigate, useParams } from 'react-router-dom'
 
 const FullPage = () => {
 
      let { id } = useParams();
      const [fullPage, setFullPage] = useState(null);
+     let navigate = useNavigate();
 
      useEffect(() => {
         const getFull = async () => {
@@ -16,7 +17,11 @@ const FullPage = () => {
         }
 
         getFull();
-     }, [])
+     }, []);
+
+     const showComments = (id) => {
+      navigate(`/events/${id}/comments`);
+     }
   return (
     <div className='absolute w-full'>
         {fullPage && (
@@ -79,11 +84,14 @@ const FullPage = () => {
  </div>
 
  <div className='pt-28 px-36 text-white w-4/5 m-auto'>
- <h1 className='text-pink-500 font-bold text-3xl underline underline-offset-8'>Memory wall</h1>
+ <h1 className='text-pink-500 font-bold text-3xl underline underline-offset-8' onClick={() => showComments(fullPage._id)}>Memory wall</h1>
+
  </div>
+ <Outlet />
 </div>
         )}
         
+
     </div>
   )
 }

@@ -2,6 +2,7 @@ const { User } = require('../models/UserModels');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { Event } = require('../models/EventModel');
+const { Comment } = require('../models/CommentSchema');
 
 
 // REGISRTER USERS
@@ -84,10 +85,37 @@ const getOneEvent = async (req, res) => {
    return res.json({oneEvent});
 }
 
+
+// CREATE COMMENTS
+const createComment = async (req, res) => {
+   try {
+      if(!req.user) {
+         return res.status(401).json({message: 'token not provided'});
+
+      }
+
+      const { text } = req.body;
+
+      if(!text) {
+         return json.status(400).json({message: 'text field is required'});
+      }
+
+      const { id } = req.params;
+      const userId = req.user.id;
+      const newComment = new Comment({text, author: userId, event: id });
+
+      await newComment.save();
+      res.json({message: 'comment created', comment: newComment });
+
+   } catch (error) {
+      console.log(error);
+   }
+}
 module.exports = {
    registerUsers,
    loginUsers,
    createEvent,
    getAllEvents,
-   getOneEvent
+   getOneEvent,
+   createComment
 }

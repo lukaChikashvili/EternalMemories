@@ -13,6 +13,7 @@ import Header from './components/Header';
 import CreateModal from './components/CreateModal';
 import ExampleMemorial from './components/ExampleMemorial';
 import FullPage from './components/FullPage';
+import Comments from './components/Comments';
 
 
 function App() {
@@ -35,7 +36,9 @@ function App() {
          <Route path = "/profile" element = {<Home /> }></Route>  
           <Route path = "/create" element = {<CreateModal /> } />
           <Route path = "/example" element = {<ExampleMemorial /> } />
-          <Route path = "/events/:id" element = {<FullPage /> } />
+          <Route path = "/events/:id" element = {<FullPage /> }>
+               <Route path = "comments" element = {<Comments />} />
+            </Route>
       </Routes>
       </SmoothScroll>
     </div>
