@@ -34,7 +34,7 @@ className='text-xl cursor-pointer line' onClick={() => navigate('/login')}>Log i
 <motion.h2 initial = {{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'}}
           whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
           transition={{ duration: 1, delay: 1.8 }}
-className='text-xl border-2 border-white rounded-md py-1 px-6 cursor-pointer duration-500 ease-in hover:bg-white hover:text-black'>Get started</motion.h2>
+className='text-xl border-2 border-white rounded-md py-1 px-6 cursor-pointer duration-500 ease-in hover:bg-white hover:text-black' onClick={() => navigate('/create')}>Get started</motion.h2>
   </>
           }
         

@@ -37,6 +37,11 @@ const eventSchema = new mongoose.Schema({
       type: String,
       required: true
      },
+
+     bio: {
+      type: String,
+      required: true
+     },
      
      author: {
         type: mongoose.Schema.Types.ObjectId,

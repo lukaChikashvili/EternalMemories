@@ -49,7 +49,8 @@ const FullPage = () => {
  <div>
 
   <h2 className='text-white text-2xl w-3/5 m-auto pt-24' style={{lineHeight: '3rem'}}>
- <span className='text-7xl text-pink-500 font-bold'>J</span>
+ <span className='text-7xl text-pink-500 font-bold'>{fullPage.bio[0]}</span>
+ {fullPage.bio}
   </h2>
  </div>
 
