@@ -36,8 +36,8 @@ const Login = () => {
                      whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
                      transition={{ duration: 1.5, delay: 0.5 }}
        className='text-3xl text-pink-500 text-center font-bold'>Log in</motion.h1>
-          <input type='text' placeholder='Email' className='w-full md:w-1/2 p-2  border-4  border-pink-500 rounded-md outline-none' onChange={(e) => setEmail(e.target.value)} />
-          <input type='password' placeholder='Password' className='w-full md:w-1/2 p-2 border-4  border-pink-500 rounded-md outline-none' onChange={(e) => setPassword(e.target.value)} />
+          <input type='text' placeholder='Email - demo@gmail.com' className='w-full md:w-1/2 p-2  border-4  border-pink-500 rounded-md outline-none' onChange={(e) => setEmail(e.target.value)} />
+          <input type='password' placeholder='Password - demo123' className='w-full md:w-1/2 p-2 border-4  border-pink-500 rounded-md outline-none' onChange={(e) => setPassword(e.target.value)} />
           <button type='submit' className='enter w-full md:w-1/2 p-2 rounded-md hover:opacity-70 text-white bg-pink-500'>Log In</button>
           <span className='text-xl cursor-pointer text-white'>don't have account? <i><Link to = "/register" className='underline decoration-pink-500 underline-offset-8 duration-500 ease-in hover:decoration-wavy'>register</Link></i></span>
        </motion.form>
