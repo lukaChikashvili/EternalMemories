@@ -14,6 +14,8 @@ const CreateModal = () => {
     const [img, setImg] = useState('');
     const [banner, setBanner] = useState('');
     const [bio, setBio] = useState('');
+    const [funeralLocation, setFuneralLocation] = useState('');
+    const [funeralTime, setFuneralTime] = useState('');
   
     const { events, setEvents} = useContext(EventContext);
 
@@ -28,7 +30,7 @@ const CreateModal = () => {
 
         if(token) {
           const response = await axios.post('http://localhost:5000/api/events', {
-            name, surname, birth, death, location, img, banner, bio
+            name, surname, birth, death, location, img, banner, bio, funeralLocation, funeralTime
         }, 
             {
                 headers: {
@@ -90,6 +92,16 @@ const CreateModal = () => {
         <div className='flex flex-col items-start gap-4 '>
         <label className='text-xl font-bold'>Write biography</label>
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setBio(e.target.value)}/>
+        </div>
+
+        <div className='flex flex-col items-start gap-4 '>
+        <label className='text-xl font-bold'>Funeral location</label>
+       <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setFuneralLocation(e.target.value)}/>
+        </div>
+
+        <div className='flex flex-col items-start gap-4 '>
+        <label className='text-xl font-bold'>Funeral date & time</label>
+       <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setFuneralTime(e.target.value)}/>
         </div>
 
 

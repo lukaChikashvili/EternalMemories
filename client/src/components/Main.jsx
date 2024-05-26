@@ -31,7 +31,7 @@ Craft a heartfelt and elegant memorial page to celebrate the life and legacy of 
                      whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
                      transition={{ duration: 0.5, delay: 2 }}
 
-   className='text-white bg-pink-500 py-2 px-8 rounded-md shadow-lg text-xl duration-500 ease-in hover:opacity-80'>Create memorial page</motion.button>
+   className='text-white bg-pink-500 py-2 px-8 rounded-md shadow-lg text-xl duration-500 ease-in hover:opacity-80' onClick={() => navigate('/create')}>Create memorial page</motion.button>
 
    <motion.button initial = {{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'}}
                      whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}

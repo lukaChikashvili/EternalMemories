@@ -67,8 +67,7 @@ const FullPage = () => {
      <MapPin />
       <span className='text-2xl'>Location:</span>
       </div>
-      <p>Live Oak Memorial Park
-200 E Duarte Rd, Monrovia, CA 91016, USA</p>
+      <p>{fullPage.funeralLocation}</p>
    </div>
    
    <div className='flex flex-col gap-4 border-2 border-pink-500 items-center mt-12 p-12 rounded-md'>
@@ -76,8 +75,7 @@ const FullPage = () => {
     <Calendar />
       <span className='text-2xl'>Date & time:</span>
       </div>
-      <p>Monday, April 18, 2022
-      4:00 PM to 5:00 PM</p>
+      <p>{fullPage.funeralTime}</p>
    </div>
    
 

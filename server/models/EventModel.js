@@ -42,6 +42,16 @@ const eventSchema = new mongoose.Schema({
       type: String,
       required: true
      },
+
+     funeralLocation: {
+      type: String,
+      required: true
+     },
+
+     funeralTime: {
+      type: String,
+      required: true
+     },
      
      author: {
         type: mongoose.Schema.Types.ObjectId,
