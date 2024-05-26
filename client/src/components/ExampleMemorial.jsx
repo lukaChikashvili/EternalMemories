@@ -15,7 +15,7 @@ const ExampleMemorial = () => {
        <p className='text-white text-xl text-center'>Monrovia, California</p>
        </div>
 
-       <div className='flex items-center justify-center pt-12 gap-8'>
+       <div className='flex flex-col md:flex-row items-center justify-center pt-12 gap-8'>
            <div className='text-white flex items-center gap-4 text-2xl border-2 border-pink-500 py-2 px-8 rounded-md'>
              <BookOpen />
              <p>Biography</p>
@@ -58,7 +58,7 @@ Rest in peace, John. Your memory will forever be a guiding light in our lives.
        </div>
 
 
-       <div className='pt-28 px-36 text-white w-4/5 m-auto'>
+       <div className='pt-28 px-4 md:px-36 text-white w-full md:w-4/5 m-auto'>
         <h1 className='text-pink-500 font-bold text-3xl underline underline-offset-8'>Funeral</h1>
          <div className='flex flex-col gap-4 border-2 border-pink-500 items-center mt-12 p-12 rounded-md'>
             <div className='flex items-center gap-4'>

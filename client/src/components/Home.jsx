@@ -37,7 +37,7 @@ const Home = () => {
     
   
 
-<div className='grid grid-cols-3 gap-24 py-12 px-28 text-white'>
+<div className='grid grid-cols-1 md:grid-cols-3  mt-12 gap-24 py-12 px-28 text-white'>
 {events.map((value) => (
   <div key={value._id} className='flex flex-col items-center gap-4'>
         <img src = {value.img} className='w-56 h-56 object-cover rounded-full shadow-lg cursor-pointer' />

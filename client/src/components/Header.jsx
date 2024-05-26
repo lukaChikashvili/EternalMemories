@@ -12,12 +12,12 @@ const Header = () => {
      navigate('/');
   }
   return (
-    <div className='absolute w-full flex items-center justify-between text-white py-8 px-24 z-10 '>
+    <div className='absolute w-full flex items-center justify-between text-white py-8 px-12 md:px-24 z-10 '>
        <div className="logo">
            <motion.h1 initial = {{opacity: 0, translateX: -10}}
            whileInView={{opacity: 1, translateX: 0}}
            transition={{duration: 1.5, delay: 1.5}}
-           className='text-3xl cursor-pointer' onClick={() => navigate('/')}>EternalMemories</motion.h1>
+           className='hidden md:block md:text-3xl cursor-pointer' onClick={() => navigate('/')}>EternalMemories</motion.h1>
        </div>
 
        <nav className='flex gap-8 items-center '>

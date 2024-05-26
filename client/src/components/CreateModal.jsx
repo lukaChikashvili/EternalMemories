@@ -50,62 +50,62 @@ const CreateModal = () => {
 
 
   return (
-    <div className='absolute flex flex-col items-center justify-center min-h-screen w-full m-auto gap-8 text-white pt-36 ' >
+    <div className='absolute flex flex-col items-center justify-center min-h-screen w-3/5  md:w-full m-auto gap-8 text-white pt-36 ' >
 
       <ArrowLeft className='absolute top-36 cursor-pointer duration-500 ease-in hover:opacity-50 left-96 ' onClick={() => navigate('/profile')}   size={40} />
-      <h1 className='text-2xl text-pink-500 font-bold'>Create memorial page easily. Enter details</h1>
-        <div className='flex flex-col items-start gap-4  '>
+      <h1 className='text-2xl text-pink-500 font-bold  '>Create memorial page easily. Enter details</h1>
+        <div className='flex flex-col items-center  gap-4 m-auto  '>
         <label className='text-xl font-bold'>First name </label> 
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setName(e.target.value)}/> 
         </div> 
  
-        <div className='flex flex-col items-start gap-4 '>
+       <div className='flex flex-col items-center m-auto gap-4  '>
         <label className='text-xl font-bold'>Last name</label> 
        <input type = "text" className='py-2 px-4 rounded-md outline-none  w-96 text-pink-500' onChange={(e) => setSurname(e.target.value)}/> 
         </div> 
  
-        <div className='flex flex-col items-start gap-4 '>
+        <div className='flex flex-col items-center gap-4 m-auto '>
         <label className='text-xl font-bold'>Date of birth</label> 
        <input type = "text" className='py-2 px-4 rounded-md outline-none  w-96 text-pink-500' onChange={(e) => setBirth(e.target.value)}/> 
         </div> 
     
-        <div className='flex flex-col items-start gap-4 '>
+        <div className='flex flex-col items-center gap-4 m-auto '>
         <label className='text-xl font-bold'>date of passing</label> 
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setDeath(e.target.value)}/> 
         </div> 
  
-        <div className='flex flex-col items-start gap-4 '>
+        <div className='flex flex-col items-center gap-4 m-auto'>
         <label className='text-xl font-bold'>Place of residence</label>
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setLocation(e.target.value)}/>
         </div>
 
-        <div className='flex flex-col items-start gap-4 '>
+        <div className='flex flex-col items-center gap-4 m-auto'>
         <label className='text-xl font-bold'>Memorial photo</label>
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setImg(e.target.value)}/>
         </div>
 
-        <div className='flex flex-col items-start gap-4 '>
+        <div className='flex flex-col items-center gap-4 m-auto'>
         <label className='text-xl font-bold'>Memorial banner</label>
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setBanner(e.target.value)}/>
         </div>
 
-        <div className='flex flex-col items-start gap-4 '>
+        <div className='flex flex-col items-center gap-4 m-auto'>
         <label className='text-xl font-bold'>Write biography</label>
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setBio(e.target.value)}/>
         </div>
 
-        <div className='flex flex-col items-start gap-4 '>
+        <div className='flex flex-col items-center gap-4 m-auto'>
         <label className='text-xl font-bold'>Funeral location</label>
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setFuneralLocation(e.target.value)}/>
         </div>
 
-        <div className='flex flex-col items-start gap-4 '>
+        <div className='flex flex-col items-center gap-4 m-auto'>
         <label className='text-xl font-bold'>Funeral date & time</label>
        <input type = "text" className='py-2 px-4 rounded-md outline-none w-96 text-pink-500' onChange={(e) => setFuneralTime(e.target.value)}/>
         </div>
 
 
-        <button  onClick={handleEvent} className='bg-pink-500 text-white py-2 px-8 w-96 rounded-md shadow-lg mb-12 duration-500 ease-in hover:opacity-55'>Create memorial</button>
+        <button  onClick={handleEvent} className='bg-pink-500 text-white py-2 px-8 w-96 m-auto rounded-md shadow-lg mb-12 duration-500 ease-in hover:opacity-55'>Create memorial</button>
 
         <h2 className='text-xl text-pink-500 underline underline-offset-8  '>{err}</h2>
     </div>

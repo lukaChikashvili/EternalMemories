@@ -16,6 +16,7 @@ import FullPage from './components/FullPage';
 import Comments from './components/Comments';
 
 
+
 function App() {
   const auth = !!localStorage.getItem('token');
   return (
@@ -40,6 +41,7 @@ function App() {
                <Route path = "comments" element = {<Comments />} />
             </Route>
       </Routes>
+
       </SmoothScroll>
     </div>
   );
