@@ -19,7 +19,7 @@ const Register = () => {
    const handleRegister = async (e) => {
      e.preventDefault();
      
-     const response = await axios.post('http://localhost:5000/api/register', {name, surname, email, password});
+     const response = await axios.post('https://eternalmemories.onrender.com/api/register', {name, surname, email, password});
 
      if(response.status === 200) {
        setSuccess(true);

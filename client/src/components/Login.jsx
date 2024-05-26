@@ -13,7 +13,7 @@ const Login = () => {
   const handleLogin = async (e) => {
      e.preventDefault();
 
-     const response = await axios.post('http://localhost:5000/api/login', {email, password});
+     const response = await axios.post('https://eternalmemories.onrender.com/api/login', {email, password});
 
      const token = response.data.token;
 

@@ -11,7 +11,7 @@ const Comments = () => {
 
     const writeComment = async () => {
         const token = localStorage.getItem("token");
-        const response = await axios.post(`http://localhost:5000/api/events/${id}/comments`, {text: comment}, {
+        const response = await axios.post(`https://eternalmemories.onrender.com/api/events/${id}/comments`, {text: comment}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -28,7 +28,7 @@ const Comments = () => {
     const getAll = async () => {
         const token = localStorage.getItem('token');
 
-        const response = await axios.get(`http://localhost:5000/api/events/${id}/comments/all`, {
+        const response = await axios.get(`https://eternalmemories.onrender.com/api/events/${id}/comments/all`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

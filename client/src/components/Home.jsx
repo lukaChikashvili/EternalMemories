@@ -13,7 +13,7 @@ const Home = () => {
   let navigate = useNavigate();
 
    const getEvents = async () => {
-     const response = await axios.get('http://localhost:5000/api/events/all');
+     const response = await axios.get('https://eternalmemories.onrender.com/api/events/all');
 
     setEvents(response.data.events);
    }

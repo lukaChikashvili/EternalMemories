@@ -11,7 +11,7 @@ const FullPage = () => {
 
      useEffect(() => {
         const getFull = async () => {
-            const response = await axios.get(`http://localhost:5000/api/events/${id}`);
+            const response = await axios.get(`https://eternalmemories.onrender.com/api/events/${id}`);
         setFullPage(response.data.oneEvent);
        
         }

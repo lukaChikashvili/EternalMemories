@@ -29,7 +29,7 @@ const CreateModal = () => {
         const token = localStorage.getItem('token');
 
         if(token) {
-          const response = await axios.post('http://localhost:5000/api/events', {
+          const response = await axios.post('https://eternalmemories.onrender.com/api/events', {
             name, surname, birth, death, location, img, banner, bio, funeralLocation, funeralTime
         }, 
             {
